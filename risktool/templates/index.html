@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title_name %}
+{{ block.super }} || home
+{% endblock title_name %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<input type='button'value='add data' class="btn" onclick="document.location.href='adddata';"/>
+<br>
+<br>
+<br>
+<br>
+<input type='button'value='show chart' class="btn" onclick="document.location.href='charts';"/>
+{% endblock content %}

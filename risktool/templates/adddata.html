@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title_name %}
+{{ block.super }} || adddata
+{% endblock title_name %}
+
+
+{% block content %}
+  <!--<div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor..</p>
+      <p>Ut enim ad..</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor..</p>
+      <p>Ut enim ad..</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>
+      <p>Lorem ipsum dolor..</p>
+      <p>Ut enim ad..</p>
+    </div>
+  </div>-->
+    {% if error %}
+    {{ error }}
+    {% endif %}
+
+    <form method="POST">{% csrf_token %}
+<div class="row">
+    <div class="col-sm-1"> Risk</div>
+    <div class="col-sm-1"><textarea placeholder="what is the risk" name="risk"></textarea></div>
+</div>
+
+<br />
+    <div class="row">
+    <div class="col-sm-1"> Risk Description</div>
+    <div class="col-sm-1"><textarea name="riskdesc"></textarea></div>
+    </div>
+<br />
+    <div class="row">
+    <div class="col-sm-1"> Solution to Risk</div>
+    <div class="col-sm-1"><textarea placeholder="how to handel risk" name="risksol"></textarea></div>
+</div>
+    <br />
+
+      <div class="row">
+ <div class="col-sm-2"> Consequence</div>
+          <div class="col-sm-1">
+      <select name="consequence">
+  <option value="1">Insignificant</option>
+  <option  value="2">Mild</option>
+  <option  value="3">Modrate</option>
+  <option value="4">Significant</option>
+  <option value="5">Catastrophic</option>
+</select>
+          </div>
+  </div>
+    <br />
+
+    <div class="row">
+ <div class="col-sm-2"> Likelihood</div>
+          <div class="col-sm-1">
+      <select name="likelihood">
+  <option value="1">Low</option>
+  <option  value="2">Low-Medium</option>
+  <option  value="3">Medium</option>
+  <option value="4">Medium-High</option>
+   <option value="5">High</option>
+</select>
+          </div>
+  </div>
+<br />
+    <div class="row">
+         <div class="col-sm-3">
+<input type="submit" value="Add" class="btn btn-success btn-block"/>
+             </div>
+    </div>
+        </form>
+{% endblock content %}
